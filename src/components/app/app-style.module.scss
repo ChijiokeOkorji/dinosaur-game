@@ -1,0 +1,51 @@
+@use '../../main.scss';
+
+.child {
+  height: 8rem;
+  grid-column: 1/-1;
+  display: flex;
+  align-items: flex-end;
+  border-bottom: 0.125rem solid main.$main-color;
+  overflow: hidden;
+
+  .message {
+    margin-bottom: 3rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .score {
+    @extend .message;
+    margin-right: 0.75rem;
+    margin-bottom: 5rem;
+    text-align: right;
+  }
+
+  // Responsive grid child styling
+  @media screen and (min-width: 40rem) {
+    & {
+      grid-column: 2/-2;
+    }
+  }
+  
+  @media screen and (min-width: 60rem) {
+    & {
+      grid-column: 3/-3;
+    }
+  }
+  
+  @media screen and (min-width: 80rem) {
+    & {
+      grid-column: 4/-4;
+    }
+  }
+  
+  @media screen and (min-width: 100rem) {
+    & {
+      grid-column: 5/-5;
+    }
+  }  
+}

@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+$background-color: #ffffff;
+$main-color: #000000;
+$sans-serif-font-family: 'Courier New', Courier, monospace;
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.03125rem;
+  line-height: 1;
+  color: $main-color;
+}
+
+#root {
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100vh;
+  font-family: $sans-serif-font-family;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(auto-fit, minmax(0, auto));
+  align-items: center;
+  gap: 0;
+  overflow: hidden auto;
+
+  // Grid responsive layout for the root element
+  @media screen and (min-width: 40rem) {
+    & {
+      grid-template-columns: repeat(8, 1fr);
+    }
+  }
+  
+  @media screen and (min-width: 60rem) {
+    & {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+  
+  @media screen and (min-width: 80rem) {
+    & {
+      grid-template-columns: repeat(16, 1fr);
+    }
+  }
+  
+  @media screen and (min-width: 100rem) {
+    & {
+      grid-template-columns: repeat(20, 1fr);
+    }
+  }
+}
+
+
+.grid {
+  display: grid;
+	grid-template-columns: repeat(20, 1fr);
+	grid-template-rows: repeat(20, 1fr);
+	gap: 0;
+
+  & > * {
+    background-color: $main-color;
+  }
+}
